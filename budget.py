@@ -9,16 +9,16 @@ class Category:
         name_length = len(self.name)
         start = (30 - name_length) // 2
         stars = ""
-        result = "\n"
+
         for i in range(start):
             stars = "*" + stars
         result = stars + self.name + stars + "\n"
         for i in range(len(self.ledger)):
             extra_space = ""
-            # print(str(self.ledger[i]["amount"]))
+
             float_modified = float(self.ledger[i]["amount"])
             format_float = "{:.2f}".format(float_modified)
-            # print(str(self.ledger[i]["amount"])[0] == "-")
+
             for j in range(30 - len(format_float) - len(self.ledger[i]["description"][:23])):
                 if str(self.ledger[i]["amount"])[0] == "-":
                     j = j + 1
